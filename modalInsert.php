@@ -20,7 +20,7 @@
               <label>Edad</label>
               <input type="text" id="edad" name="edad" class="form-control form-control-sm">
               <label>Fecha de registro</label>
-              <input type="text" id="fecha" name="fecha" class="form-control form-control-sm">
+              <input type="text" id="fecha" name="fecha" placeholder="year-month-day" class="form-control form-control-sm">
               <br>
               <input type="submit" value="Guardar" class="btn btn-primary">
           </form>
