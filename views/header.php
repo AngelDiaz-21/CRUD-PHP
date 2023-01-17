@@ -4,9 +4,9 @@
     </a>
     <ul>
         <li class="d-flex">
-            <a class="text-decoration-none text-white me-5" href="<?php echo constant('URL');?>">Inicio</a>
-            <a class="text-decoration-none text-white me-5" href="">Alumnos</a>
-            <a class="text-decoration-none text-white me-3" href="">Empleados</a>
+            <a class="text-decoration-none text-white me-5" href="<?php echo constant('URL');?>main">Inicio</a>
+            <a class="text-decoration-none text-white me-5" href="<?php echo constant('URL');?>estudiantes">Estudiantes</a>
+            <a class="text-decoration-none text-white me-3" href="<?php echo constant('URL');?>empleados">Empleados</a>
         </li>
     </ul>
 </nav>
