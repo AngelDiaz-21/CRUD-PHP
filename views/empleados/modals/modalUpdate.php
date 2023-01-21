@@ -11,11 +11,11 @@
             </div>
             <div class="modal-body">
                 <form id="frminsertu" onsubmit="return actualizarDatos()" method="post">
-                    <input type="text" id="id" name="id" hidden="">
+                    <input type="text" id="id" name="id" hidden>
                     <label>Nombre</label>
-                    <input type="text" id="nombreu" name="nombreUpdate" class="form-control form-control-sm" required="">
+                    <input type="text" id="nombreu" name="nombreUpdate" class="form-control form-control-sm" required>
                     <label>Sueldo</label>
-                    <input type="text" id="sueldou" name="sueldoUpdate" class="form-control form-control-sm" required="">
+                    <input type="text" id="sueldou" name="sueldoUpdate" class="form-control form-control-sm" required
                     <label>Edad</label>
                     <input type="text" id="edadu" name="edadUpdate" class="form-control form-control-sm">
                     <label>Fecha de registro</label>

@@ -17,9 +17,9 @@
                     <label>Sueldo</label>
                     <input type="text" id="sueldo" name="sueldo" class="form-control form-control-sm" required>
                     <label>Edad</label>
-                    <input type="text" id="edad" name="edad" class="form-control form-control-sm">
+                    <input type="text" id="edad" name="edad" class="form-control form-control-sm" required>
                     <label>Fecha de registro</label>
-                    <input type="text" id="fecha" name="fRegistro" class="form-control form-control-sm">
+                    <input type="text" id="fecha" name="fRegistro" class="form-control form-control-sm" required>
                     <br>
                     <input type="submit" value="Guardar" class="btn btn-primary">
                 </form>
