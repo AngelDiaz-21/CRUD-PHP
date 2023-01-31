@@ -27,10 +27,15 @@ class Empleados extends Controller{
     function obtenerDatos(){
         $id = $_POST['id'];
         $empleado = $this->model->obtenerDatos($id);
-        session_start();
-        $_SESSION['id_empleado'] = $empleado[0];
 
-        echo json_encode($this->model->obtenerDatos($id));
+        if(!$empleado){
+            echo 0;
+            return;
+        }else{
+            session_start();
+            $_SESSION['id_empleado'] = $empleado[0];
+            echo json_encode($this->model->obtenerDatos($id));
+        }
     }
 
     function actualizarDatos(){
@@ -50,7 +55,6 @@ class Empleados extends Controller{
         );
 
         unset($_SESSION['id_empleado']);
-
         echo $this->model->updateEmpleado($datos);
     }
 
@@ -77,6 +81,7 @@ class Empleados extends Controller{
         $datosTabla="";
 
         foreach ($empleados as $key =>$value){
+            // var_dump($empleados[0][0]);
         $datosTabla=$datosTabla.'<tr>
                                     <td>'.$value['nombre'].'</td>
                                     <td class="text-center">'.$value['sueldo'].'</td>
