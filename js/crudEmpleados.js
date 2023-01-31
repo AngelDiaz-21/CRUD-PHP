@@ -19,7 +19,7 @@ function insertarDatos() {
             } else if(r == 1){
                 $('#frminsert')[0].reset();
                 mostrar();
-                swal("Dato agregado con exito", "", "success");
+                swal("Dato agregado con éxito", "", "success");
             } else{
                 swal("Error", r, "error");
             }
@@ -32,16 +32,20 @@ function obtenerDatos(id) {
     $.ajax({
         type: "POST",
         data: "id=" + id,
+        async: false,     //que espere respuesta
         url: "empleados/obtenerDatos",
         success: function(r) {
-            console.log(r);
-            r = jQuery.parseJSON(r);
-            $('#id').val(r['id']);
-            $('#nombreu').val(r['nombre']);
-            $('#sueldou').val(r['sueldo']);
-            $('#edadu').val(r['edad']);
-            $('#fechau').val(r['fRegistro']);
-            $('#session').val(r['dum']);
+            if(!(r == 0)){
+                r = jQuery.parseJSON(r);
+                $('#id').val(r['id']);
+                $('#nombreu').val(r['nombre']);
+                $('#sueldou').val(r['sueldo']);
+                $('#edadu').val(r['edad']);
+                $('#fechau').val(r['fRegistro']);
+                $('#session').val(r['dum']);
+            }else{
+                window.location="http://crud-pdo-mysql.test/empleados";
+            }
         }
     });
 }
@@ -58,7 +62,9 @@ function actualizarDatos() {
             } else if(r == 1){
                 $('#frminsert')[0].reset();
                 mostrar();
-                swal("Dato agregado con exito", "", "success");
+                swal("Dato actualizado con éxito", "", "success").then((success) =>{
+                    $("#actualizarModal").modal('hide');//ocultamos el modal
+                })
             } else{
                 swal("Error", 'Error', "error");
             }
@@ -82,10 +88,9 @@ function eliminarDatos(id) {
                 url: "empleados/eliminarDatos",
                 data: "id=" + id,
                 success: function(r) {
-                    console.log(r);
                     if (r == 1) {
                         mostrar();
-                        swal("Eliminado con exito", "", "success");
+                        swal("Registro eliminado con éxito", "", "success");
                     } else {
                         swal("Error", "", "error");
                     }
