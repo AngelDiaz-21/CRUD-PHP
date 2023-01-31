@@ -35,11 +35,7 @@ function actualizarDatos() {
                     "success"
                 )
                 .then((success) => {
-                    if(success){
-                        window.location="http://crud-pdo-mysql.test/estudiantes";
-                    } else{
-                        window.location="http://crud-pdo-mysql.test/estudiantes";
-                    }
+                    return window.location="http://crud-pdo-mysql.test/estudiantes";
                 })
             } else {
                 swal("Error", r, "error");
