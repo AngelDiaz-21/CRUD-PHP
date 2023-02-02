@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 	<title>PDO</title>
 	<link rel="stylesheet" type="text/css" href="../../librerias/bootstrap5/bootstrap.min.css">
@@ -46,25 +46,35 @@
 										</thead>
 										<tbody id="tbody-alumnos">
 											<?php 
+												session_start();
+
 												foreach ($this->estudiantes as $key => $value) {
+													$_SESSION['matriculaAlumno'] = $value['matricula'];
 											?>
-											<tr id="fila-<?php echo $value['matricula']; ?>">
-												<td class="text-center"><?php echo $value['matricula'];?></td>
-												<td class="text-center"><?php echo $value['nombre'];?></td>
-												<td class="text-center"><?php echo $value['apellido_p']?></td>
-												<td class="text-center"><?php echo $value['apellido_m']?></td>
+											<tr id="fila-<?php echo $_SESSION['matriculaAlumno']; ?>">
 												<td class="text-center">
-													<a class="btn btn-warning btn-sm" href="<?php echo constant('URL').'estudiantes/detail/'.$value['matricula'];?>">
+													<?php
+														echo $_SESSION['matriculaAlumno']; 
+													?>
+												</td>
+												<td class="text-center"><?php echo $value['nombre']; ?></td>
+												<td class="text-center"><?php echo $value['apellido_p'] ?></td>
+												<td class="text-center"><?php echo $value['apellido_m'] ?></td>
+												<td class="text-center">
+													<a class="btn btn-warning btn-sm" href="<?php echo constant('URL') . 'estudiantes/detail/' . $_SESSION['matriculaAlumno']; ?>">
 														<i class="fas fa-edit"></i>
 													</a>
 												</td>
 												<td class="text-center">
-													<button class="btnEliminar btn btn-danger btn-sm" onclick="eliminarDatos(<?php echo $value['matricula'];?>)">
+													<button class="btnEliminar btn btn-danger btn-sm" onclick="eliminarDatos(<?php echo $_SESSION['matriculaAlumno']; ?>)">
 														<i class="fas fa-trash-alt"></i>
 													</button>
 												</td>
 											</tr>
-											<?php } ?>
+											<?php
+												} 
+												unset($_SESSION['matriculaAlumno']);
+											?>
 										</tbody>
 									</table>
 								</div>
