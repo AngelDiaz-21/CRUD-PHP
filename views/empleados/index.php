@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 	<title>PDO</title>
 	<link rel="stylesheet" type="text/css" href="librerias/bootstrap5/bootstrap.min.css">
