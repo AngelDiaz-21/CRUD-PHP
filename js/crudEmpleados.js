@@ -1,7 +1,7 @@
 function mostrar() {
     $.ajax({
         type: "POST",
-        url: "empleados/getEmpleados",
+        url: "/empleados/getEmpleados",
         success: function(r) {
             $('#tablaDatos').html(r);
         }
@@ -11,7 +11,7 @@ function mostrar() {
 function insertarDatos() {
     $.ajax({
         type: "POST",
-        url: "empleados/registrarEmpleado",
+        url: "/empleados/registrarEmpleado",
         data: $('#frminsert').serialize(),
         success: function(r) {
             if (r == 0) {
@@ -33,7 +33,7 @@ function obtenerDatos(id) {
         type: "POST",
         data: "id=" + id,
         async: false,     //que espere respuesta
-        url: "empleados/obtenerDatos",
+        url: "/empleados/obtenerDatos",
         success: function(r) {
             if(!(r == 0)){
                 r = jQuery.parseJSON(r);
@@ -53,7 +53,7 @@ function obtenerDatos(id) {
 function actualizarDatos() {
     $.ajax({
         type: "POST",
-        url: "empleados/actualizarDatos",
+        url: "/empleados/actualizarDatos",
         // Mandamos a llamar el formulario
         data: $('#frminsertu').serialize(),
         success: function(r) {
@@ -85,7 +85,7 @@ function eliminarDatos(id) {
         if (willDelete) {
             $.ajax({
                 type: "POST",
-                url: "empleados/eliminarDatos",
+                url: "/empleados/eliminarDatos",
                 data: "id=" + id,
                 success: function(r) {
                     if (r == 1) {
