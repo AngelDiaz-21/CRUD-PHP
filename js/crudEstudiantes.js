@@ -1,7 +1,7 @@
 function insertarDatos() {
     $.ajax({
         type: "POST",
-        url: "registrar",
+        url: "/estudiantes/registrar",
         data: $('#formCreate').serialize(),
         success: function(r) {
             if(r == 0){
@@ -22,7 +22,7 @@ function insertarDatos() {
 function actualizarDatos() {
     $.ajax({
         type: "POST",
-        url: "../actualizarDatos",
+        url: "/estudiantes/actualizarDatos",
         data: $('#formCreate').serialize(),
         success: function(r) {
             if(r == 0){
@@ -35,7 +35,7 @@ function actualizarDatos() {
                     "success"
                 )
                 .then((success) => {
-                    return window.location="http://crud-pdo-mysql.test/estudiantes";
+                    return window.location="http://crud-php.test/estudiantes";
                 })
             } else {
                 swal("Error", r, "error");
@@ -57,7 +57,7 @@ function eliminarDatos(matricula) {
         if (willDelete) {
             $.ajax({
                 type: "POST",
-                url: "estudiantes/delete",
+                url: "/estudiantes/delete",
                 data: "matricula=" + matricula,
                 success: function(r) {
                     if (r == 1) {
