@@ -2,11 +2,11 @@
 <html lang="es">
 <head>
 	<title>PDO</title>
-	<link rel="stylesheet" type="text/css" href="librerias/bootstrap5/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo constant('URL');?>librerias/bootstrap5/bootstrap.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="public/css/style.css">
+	<link rel="stylesheet" href="<?php echo constant('URL');?>public/css/style.css">
 </head>
 <body>
 	<header>
@@ -50,11 +50,11 @@
 	<?php require 'views/empleados/modals/modalInsert.php'; ?>
 	<?php require 'views/empleados/modals/modalUpdate.php'; ?>
 
-	<script src="librerias/bootstrap5/jquery-3.4.1.min.js"></script>
-	<script src="librerias/bootstrap5/popper.min.js"></script>
-	<script src="librerias/bootstrap5/bootstrap.min.js"></script>
-	<script src="librerias/sweetalert.min.js"></script>
-	<script src="js/crudEmpleados.js"></script>
+	<script src="<?php echo constant('URL');?>librerias/bootstrap5/jquery-3.4.1.min.js"></script>
+	<script src="<?php echo constant('URL');?>librerias/bootstrap5/popper.min.js"></script>
+	<script src="<?php echo constant('URL');?>librerias/bootstrap5/bootstrap.min.js"></script>
+	<script src="<?php echo constant('URL');?>librerias/sweetalert.min.js"></script>
+	<script src="<?php echo constant('URL');?>js/crudEmpleados.js"></script>
 	<script type="text/javascript">
 		mostrar();
 	</script>

@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <title>PDO</title>
-    <link rel="stylesheet" type="text/css" href="../../librerias/bootstrap5/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo constant('URL');?>librerias/bootstrap5/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,9 +21,8 @@
             <a href="<?php echo constant('URL');?>" class="btn btn-primary">Go Home</a>
         </div>
     </div>
-    <script src="librerias/bootstrap5/jquery-3.4.1.min.js"></script>
-    <script src="librerias/bootstrap5/popper.min.js"></script>
-    <script src="librerias/bootstrap5/bootstrap.min.js"></script>
-    <script src="librerias/sweetalert.min.js"></script>
+    <script src="<?php echo constant('URL');?>librerias/bootstrap5/jquery-3.4.1.min.js"></script>
+    <script src="<?php echo constant('URL');?>librerias/bootstrap5/popper.min.js"></script>
+    <script src="<?php echo constant('URL');?>librerias/bootstrap5/bootstrap.min.js"></script>
 </body>
 </html>
