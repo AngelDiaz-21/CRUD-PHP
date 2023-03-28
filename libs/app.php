@@ -4,7 +4,6 @@ require_once 'controllers/errores.php';
 
 class App{
     function __construct(){
-        // echo "<p>Nueva app</p>";
 
         $getUrl = isset($_GET['url']) ? $_GET['url'] : null;
         $getUrl = trim((string) $getUrl, '/');
@@ -27,18 +26,22 @@ class App{
             $controller = new $getUrl[0];
             $controller->loadModel($getUrl[0]);
 
-            $nparam = sizeof($getUrl);
-            if($nparam > 1){
-                if($nparam > 2){
-                    $param = [];
-                    for ($i = 2; $i < $nparam; $i++){
-                        array_push($param, $getUrl[$i]);
+            if(isset($getUrl[1])){
+                if(method_exists($controller, $getUrl[1])){
+                    if(isset($getUrl[2])){
+                        $nparam = count($getUrl) - 2;
+                        $params = [];
+                        for($i = 0; $i < $nparam; $i++){
+                            array_push($params, $getUrl[$i+2]);
+                        }
+                        $controller->{$getUrl[1]}($params);
+                    }else{
+                        $controller->{$getUrl[1]}();
                     }
-                    $controller->{$getUrl[1]}($param);
                 }else{
-                    $controller->{$getUrl[1]}();
+                    $controller = new Errores();
                 }
-            } else{
+            }else{
                 $controller->index();
             }
         }else{
