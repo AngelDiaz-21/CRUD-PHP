@@ -1,0 +1,60 @@
+body{
+    background: #4492d6 !important;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+#login-main{
+    background-color: white;
+    border-radius: 3px;
+    padding: 20px;
+    width: 300px;
+    margin: calc((100vh - 550px)/2) auto 0 auto;
+}
+
+#login-main h2{
+    padding: 10px 0;
+}
+
+#login-main p{
+    padding: 10px 0 0 0;
+}
+
+@media screen and (min-width: 270px) {
+    #login-main{
+        margin-top: auto;
+        height: calc(100vh - 30%);
+    }
+}
+
+@media screen and (min-width: 360px) {
+    #login-main{
+        height: calc(100vh - 40%);
+    }
+}
+
+@media screen and (min-width: 999px) {
+    #login-main{
+        height: calc(100vh - 40%);
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    #login-main{
+        margin: calc((100vh - 550px)/2) auto 0 auto;
+        height: calc(100vh - 55%);
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    #login-main{
+        height: calc(100vh - 65%);
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    #login-main{
+        height: calc(100vh - 70%);
+    }
+}
