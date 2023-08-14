@@ -44,7 +44,7 @@ function obtenerDatos(id) {
                 $('#fechau').val(r['fRegistro']);
                 $('#session').val(r['dum']);
             }else{
-                window.location="http://crud-pdo-mysql.test/empleados";
+                window.location="http://crud-php.test/empleados";
             }
         }
     });
